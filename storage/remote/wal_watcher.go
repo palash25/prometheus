@@ -205,6 +205,7 @@ func (w *WALWatcher) run() error {
 	}
 }
 
+// findSegmentForIndex finds the first segment greater than or equal to index.
 func (w *WALWatcher) findSegmentForIndex(index int) (int, error) {
 	files, err := fileutil.ReadDir(w.walDir)
 	if err != nil {
